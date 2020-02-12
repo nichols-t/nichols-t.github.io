@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grommet, Box } from 'grommet';
+import theme from './theme';
 
-function App() {
+const AppBar = (props) => (
+  <Box
+  tag='header'
+  direction='row'
+  align='center'
+  justify='between'
+  background='brand'
+  pad={{ left: 'medium', right: 'small', vertical: 'small'}}
+  elevation='medium'
+  style={{ zIndex: 1 }}
+  {...props}
+  />
+);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme}>
+      <AppBar>Hello Grommet!</AppBar>
+      </Grommet>
   );
 }
 
