@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grommet, Box } from 'grommet';
 import theme from './theme';
+import HomePage from './pages/Home';
 
 const AppBar = (props) => (
   <Box
@@ -19,7 +20,7 @@ const AppBar = (props) => (
 const App = () => {
   return (
     <Grommet theme={theme}>
-      <AppBar>Hello Grommet!</AppBar>
+      <HomePage />
       </Grommet>
   );
 }
