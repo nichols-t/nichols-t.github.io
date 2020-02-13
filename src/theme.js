@@ -4,8 +4,13 @@ const theme = {
         brand: '#2C3442',
         active: '#5B6479',
       },
+      focus: {
+        border: {
+          color: '#E6B53A',
+        }
+      },
       font: {
-        family: 'Roboto',
+        family: 'Muli',
         size: '18px',
         height: '20px',
       },
