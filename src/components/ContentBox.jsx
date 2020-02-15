@@ -1,25 +1,20 @@
 import React from 'react'
 import { Box } from 'grommet'
-import PropTypes from 'prop-types'
 
 /**
- * Box intended
+ * Box intended to hold page content. Centers, creates a white translucent background,
+ * default width `xlarge`, default height `large`, small padding and elevation.
+ * @param {} props all other props, which will override this component's defaults.
  */
-const ContentBox = ({ children }) =>
+const ContentBox = (props) =>
   <Box
-    align='center'
     alignSelf='center'
     background='neutral-1'
     height='medium'
     width='xlarge'
-    alignContent='center'
     pad='small'
     elevation='small'
-  >
-    {children}
-  </Box>
+    {...props}
+  />
 
-ContentBox.propTypes = {
-  children: PropTypes.any
-}
 export default ContentBox

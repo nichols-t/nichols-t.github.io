@@ -4,11 +4,12 @@ const theme = {
       brand: '#2C3442',
       active: '#5B6479',
       'neutral-1': 'rgba(255,255,255,0.1)',
+      'accent-1': 'rgba(230, 150, 48, 0.9)',
       text: 'light-1'
     },
     focus: {
       border: {
-        color: '#E6B53A'
+        color: 'accent-1'
       }
     },
     font: {

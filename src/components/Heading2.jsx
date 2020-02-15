@@ -1,16 +1,10 @@
 import React from 'react'
 import { Heading } from 'grommet'
-import PropTypes from 'prop-types'
 
 /**
  * Title that creates a white, centered Heading.
  * @param {*} props all other props, which will override this component's defaults.
  */
-const PageTitle = (props) =>
-  <Heading color='light-1' alignSelf='center' {...props} />
+const Heading2 = (props) => <Heading fill='true' margin={{ bottom: 'xsmall' }} {...props} level={2} />
 
-PageTitle.propTypes = {
-  children: PropTypes.any
-}
-
-export default PageTitle
+export default Heading2
