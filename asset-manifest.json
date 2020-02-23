@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.js": "/static/js/main.102d7824.chunk.js",
-    "main.js.map": "/static/js/main.102d7824.chunk.js.map",
+    "main.js": "/static/js/main.8432fd81.chunk.js",
+    "main.js.map": "/static/js/main.8432fd81.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.88831461.js",
     "runtime-main.js.map": "/static/js/runtime-main.88831461.js.map",
-    "static/js/2.01f2105e.chunk.js": "/static/js/2.01f2105e.chunk.js",
-    "static/js/2.01f2105e.chunk.js.map": "/static/js/2.01f2105e.chunk.js.map",
+    "static/js/2.6eee5a75.chunk.js": "/static/js/2.6eee5a75.chunk.js",
+    "static/js/2.6eee5a75.chunk.js.map": "/static/js/2.6eee5a75.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c23731e3508666ee68d87af6c4bfa61f.js": "/precache-manifest.c23731e3508666ee68d87af6c4bfa61f.js",
+    "precache-manifest.f4279edb564595d518f2e54785ba5a28.js": "/precache-manifest.f4279edb564595d518f2e54785ba5a28.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.01f2105e.chunk.js.LICENSE.txt": "/static/js/2.01f2105e.chunk.js.LICENSE.txt",
-    "static/media/newport-sunset-blur.png": "/static/media/newport-sunset-blur.ccc722c1.png"
+    "static/js/2.6eee5a75.chunk.js.LICENSE.txt": "/static/js/2.6eee5a75.chunk.js.LICENSE.txt",
+    "static/media/newport-sunset-blur.png": "/static/media/newport-sunset-blur.ccc722c1.png",
+    "static/media/skills.md": "/static/media/skills.e5e8d30a.md"
   },
   "entrypoints": [
     "static/js/runtime-main.88831461.js",
-    "static/js/2.01f2105e.chunk.js",
-    "static/js/main.102d7824.chunk.js"
+    "static/js/2.6eee5a75.chunk.js",
+    "static/js/main.8432fd81.chunk.js"
   ]
 }
