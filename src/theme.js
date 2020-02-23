@@ -20,7 +20,8 @@ const theme = {
   },
   box: {
     extend: {
-      'background-attachment': 'fixed'
+      'background-attachment': 'fixed',
+      'background-size': 'cover'
     }
   }
 }
