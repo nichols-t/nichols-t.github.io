@@ -1,7 +1,7 @@
 import Main from '../components/wrapper/Main'
 import React from 'react'
 import HeaderBar from '../components/wrapper/Header'
-import Heading2 from '../components/wrapper/Heading2'
+import Heading from '../components/wrapper/Heading'
 import Notice from '../components/Notice'
 import PageTitle from '../components/wrapper/PageTitle'
 import Paragraph from '../components/wrapper/Paragraph'
@@ -24,7 +24,7 @@ const HomePage = () =>
     </Subtitle>
     {/** Not worth abstracting this Section since I don't plan to reuse it. */}
     <Section height='large'>
-      <Heading2>About Me</Heading2>
+      <Heading level={2}>About Me</Heading>
       <Paragraph>
         I'm currently a junior at Northeastern Unviersity, studying Mathematics
         and Computer Science. I will include other interesting information about
