@@ -1,19 +1,19 @@
+import Main from '../components/wrapper/Main'
 import React from 'react'
-import { Main } from 'grommet'
-import HeaderBar from '../components/Header'
-import newportsunset from './../media/newport-sunset-blur.png'
-import Section from '../components/Section'
-import PageTitle from '../components/PageTitle'
-import Subtitle from '../components/Subtitle'
-import Paragraph from '../components/Paragraph'
-import Heading2 from '../components/Heading2'
+import HeaderBar from '../components/wrapper/Header'
+import Heading2 from '../components/wrapper/Heading2'
 import Notice from '../components/Notice'
+import PageTitle from '../components/wrapper/PageTitle'
+import Paragraph from '../components/wrapper/Paragraph'
+import Section from '../components/wrapper/Section'
+import Subtitle from '../components/wrapper/Subtitle'
+import Skills from '../components/sections/Skills'
 
 /**
  * Default page for the site. Should hold all of the basic information, including the About section.
  */
 const HomePage = () =>
-  <Main background={{ image: `url(${newportsunset})` }}>
+  <Main>
     {/** Have yet to decide how useful this will actually be. */}
     <HeaderBar />
     {/** Leave this notice up until page is actually finished. */}
@@ -22,6 +22,7 @@ const HomePage = () =>
     <Subtitle>
       Computer Science and Mathematics student at Northeastern University.
     </Subtitle>
+    {/** Not worth abstracting this Section since I don't plan to reuse it. */}
     <Section height='large'>
       <Heading2>About Me</Heading2>
       <Paragraph>
@@ -31,6 +32,7 @@ const HomePage = () =>
         that I enjoy.
       </Paragraph>
     </Section>
+    <Skills />
   </Main>
 
 export default HomePage

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Alert } from 'grommet-icons'
-import Subtitle from './Subtitle'
+import Subtitle from './wrapper/Subtitle'
 import PropTypes from 'prop-types'
 import { Paragraph, Box } from 'grommet'
 

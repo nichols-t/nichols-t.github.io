@@ -17,6 +17,11 @@ const theme = {
       size: '18px',
       height: '20px'
     }
+  },
+  box: {
+    extend: {
+      'background-attachment': 'fixed'
+    }
   }
 }
 
