@@ -23,7 +23,7 @@ const Skills = (props) => {
   })
 
   return (
-    <Section {...props}>
+    <Section {...props} height='xlarge'>
       <Heading level={2}>Skills</Heading>
       <List
         primaryKey='title'

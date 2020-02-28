@@ -20,8 +20,10 @@ const theme = {
   },
   box: {
     extend: {
+      'background-position': 'top center',
+      'background-size': 'cover',
       'background-attachment': 'fixed',
-      'background-size': 'cover'
+      overflow: 'visible'
     }
   }
 }

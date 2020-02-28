@@ -23,7 +23,7 @@ const HomePage = () =>
       Computer Science and Mathematics student at Northeastern University.
     </Subtitle>
     {/** Not worth abstracting this Section since I don't plan to reuse it. */}
-    <Section height='large'>
+    <Section height='xlarge'>
       <Heading level={2}>About Me</Heading>
       <Paragraph>
         I'm currently a junior at Northeastern Unviersity, studying Mathematics
