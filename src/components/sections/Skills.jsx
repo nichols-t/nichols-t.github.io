@@ -17,7 +17,6 @@ const Skills = (props) => {
     fetch(SkillsMarkdown).then(response => {
       return response.text()
     }).then(text => {
-      console.dir(text)
       setData(text)
     })
   })
