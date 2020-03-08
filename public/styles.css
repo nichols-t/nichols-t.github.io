@@ -1,0 +1,13 @@
+/*
+This file contains some custom CSS classes. Should not be used if an edit to src/theme.js can
+do the job instead.
+*/
+
+.center-children {
+    text-align: center;
+    vertical-align: center;
+}
+
+.inline {
+    display: inline;
+}
