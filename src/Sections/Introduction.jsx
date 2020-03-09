@@ -22,9 +22,7 @@ const Introduction = () => (
     <Typography variant="h2">About Me</Typography>
     <p>
       I&apos;m currently a junior at Northeastern Unviersity, studying Mathematics
-      and Computer Science. I will include other interesting information about
-      myself here when I find time and desire to write down the meaninglessness
-      that I enjoy.
+      and Computer Science. I will include more detailed information soon, of course.
     </p>
     <p>
       I promise that the links I have will function! I will be working on this site
