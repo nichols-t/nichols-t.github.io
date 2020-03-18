@@ -18,16 +18,16 @@ const toDo = [
 ];
 
 const Introduction = () => (
-  <Container maxWidth="sm">
+  <Container maxWidth="md">
     <Typography variant="h2">About Me</Typography>
-    <p>
+    <Typography variant="body1">
       I&apos;m currently a junior at Northeastern Unviersity, studying Mathematics
       and Computer Science. I will include more detailed information soon, of course.
-    </p>
-    <p>
+    </Typography>
+    <Typography variant="body1">
       I promise that the links I have will function! I will be working on this site
       over a period of time, and it&apos;s not finished yet.
-    </p>
+    </Typography>
     <Button>This button does nothing</Button>
     <Typography variant="h2">Things To Do</Typography>
     <List>

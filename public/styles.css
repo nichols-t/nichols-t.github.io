@@ -11,3 +11,7 @@ do the job instead.
 .inline {
     display: inline;
 }
+
+.navbar {
+    margin-bottom: 1rem;
+}

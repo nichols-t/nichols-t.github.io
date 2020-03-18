@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import { amber, pink } from '@material-ui/core/colors';
 
 const headerFonts = ['Open Sans',
   'Roboto',
@@ -32,6 +33,14 @@ const theme = createMuiTheme({
     },
     button: {
       fontFamily: bodyFonts,
+    },
+  },
+  palette: {
+    primary: {
+      main: '#4fc3f7',
+    },
+    secondary: {
+      main: '#ffa000',
     },
   },
 });
