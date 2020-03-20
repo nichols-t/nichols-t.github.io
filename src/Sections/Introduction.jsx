@@ -10,15 +10,16 @@ import {
 import uniqid from 'uniqid';
 
 const toDo = [
-  'Add Routing! Make navigation useful!',
-  'Add Personal Intro content',
-  'Add Skills content (or something similar)',
-  'Add Projects page',
-  'Add Resume link and other social links',
+  'Add detail on About page',
+  'Add projects on Projects page',
+  'Add a picture somewhere',
 ];
 
+/**
+ * This section serves as the site's homepage.
+ */
 const Introduction = () => (
-  <Container maxWidth="md">
+  <Container maxWidth="sm">
     <Typography variant="h2">About Me</Typography>
     <Typography variant="body1">
       I&apos;m currently a junior at Northeastern Unviersity, studying Mathematics

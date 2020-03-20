@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 
 const Projects = () => (
-  <Container maxWidth="md">
+  <Container maxWidth="sm">
     <Typography variant="h2">Projects</Typography>
     <Typography variant="body1">
         I will be adding a nice list of projects that I&apos;ve done on this page.

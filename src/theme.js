@@ -21,15 +21,23 @@ const theme = createMuiTheme({
     fontFamily: headerFonts,
     body1: {
       fontFamily: bodyFonts,
+      marginBottom: '0.5rem',
     },
     body2: {
       fontFamily: bodyFonts,
     },
     h1: {
       fontSize: '4rem',
+      marginBottom: '0.5rem',
     },
     h2: {
       fontSize: '2rem',
+      marginBottom: '0.5rem',
+    },
+    h3: {
+      fontSize: '1.5rem',
+      marginBottom: '0.5rem',
+      marginTop: '0.5rem',
     },
     button: {
       fontFamily: bodyFonts,
