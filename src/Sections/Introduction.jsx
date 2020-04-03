@@ -8,6 +8,7 @@ import {
   ListItemText,
 } from '@material-ui/core';
 import uniqid from 'uniqid';
+import { Link } from 'react-router-dom';
 
 const toDo = [
   'Add detail on About page',
@@ -29,7 +30,6 @@ const Introduction = () => (
       I promise that the links I have will function! I will be working on this site
       over a period of time, and it&apos;s not finished yet.
     </Typography>
-    <Button>This button does nothing</Button>
     <Typography variant="h2">Things To Do</Typography>
     <List>
       {toDo.map((toDoString) => (
