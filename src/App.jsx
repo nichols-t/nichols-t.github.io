@@ -8,7 +8,6 @@ import Navbar from './Components/Navbar';
 import Introduction from './Sections/Introduction';
 import Projects from './Sections/Projects';
 import About from './Sections/About';
-import CircleMethod from './Sections/CircleMethod';
 
 function App() {
   return (
@@ -28,9 +27,6 @@ function App() {
         </Route>
         <Route path="/about" exact>
           <About />
-        </Route>
-        <Route path="/circlemethod" exact>
-          <CircleMethod />
         </Route>
       </Switch>
     </MuiThemeProvider>
