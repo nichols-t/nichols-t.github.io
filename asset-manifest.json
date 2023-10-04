@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/static/js/main.ac3c3e7b.chunk.js",
+    "main.js.map": "/static/js/main.ac3c3e7b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f8fb009a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f8fb009a.js.map",
+    "static/js/2.5c67b072.chunk.js": "/static/js/2.5c67b072.chunk.js",
+    "static/js/2.5c67b072.chunk.js.map": "/static/js/2.5c67b072.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a55bd7629503cab8d902b6ae6f77d106.js": "/precache-manifest.a55bd7629503cab8d902b6ae6f77d106.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.5c67b072.chunk.js.LICENSE.txt": "/static/js/2.5c67b072.chunk.js.LICENSE.txt",
+    "static/media/Eternal_Return.pdf": "/static/media/Eternal_Return.11f2b505.pdf",
+    "static/media/Final_Catch.pdf": "/static/media/Final_Catch.9923df6b.pdf",
+    "static/media/Geralt_of_Rivia.pdf": "/static/media/Geralt_of_Rivia.d880ed3c.pdf",
+    "static/media/Requiem_for_the_Brigadier_General.pdf": "/static/media/Requiem_for_the_Brigadier_General.ec054374.pdf",
+    "static/media/Thin_Line.pdf": "/static/media/Thin_Line.4c5c720e.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f8fb009a.js",
+    "static/js/2.5c67b072.chunk.js",
+    "static/js/main.ac3c3e7b.chunk.js"
+  ]
+}
