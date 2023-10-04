@@ -23,21 +23,9 @@ const Introduction = () => (
   <Container maxWidth="sm">
     <Typography variant="h2">About Me</Typography>
     <Typography variant="body1">
-      I&apos;m currently a junior at Northeastern Unviersity, studying Mathematics
-      and Computer Science. I will include more detailed information soon, of course.
+      I&apos;m currently a software engineer at INTEGRITY Security Services, LLC. This site
+      is used to share my guitar arrangements and (eventually) other art and projects.
     </Typography>
-    <Typography variant="body1">
-      I promise that the links I have will function! I will be working on this site
-      over a period of time, and it&apos;s not finished yet.
-    </Typography>
-    <Typography variant="h2">Things To Do</Typography>
-    <List>
-      {toDo.map((toDoString) => (
-        <ListItem key={uniqid()}>
-          <ListItemText primary={toDoString} />
-        </ListItem>
-      ))}
-    </List>
   </Container>
 );
 

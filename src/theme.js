@@ -39,6 +39,17 @@ const theme = createMuiTheme({
       marginBottom: '0.5rem',
       marginTop: '0.5rem',
     },
+    h4: {
+      fontSize: '1.2rem',
+      marginBottom: '0.5rem',
+      marginTop: '0.5rem',
+    },
+    subtitle1: {
+      marginBottom: '0.5rem',
+    },
+    subtitle2: {
+      marginBottom: '0.5rem',
+    },
     button: {
       fontFamily: bodyFonts,
     },
