@@ -5,6 +5,7 @@ import {
   Divider,
 } from '@material-ui/core';
 import { Route, useLocation } from 'react-router-dom';
+import MemoriesOfMother from '../pdf/Memories_of_Mother.pdf';
 import EternalReturn from '../pdf/Eternal_Return.pdf';
 import ThinLine from '../pdf/Thin_Line.pdf';
 import RequiemForTheBrigadierGeneral from '../pdf/Requiem_for_the_Brigadier_General.pdf';
@@ -23,6 +24,13 @@ const Guitar = () => {
       <Typography variant="h2">Guitar</Typography>
       <Typography variant="body1">
       I occasionally arrange music for classical guitar. Anything good enough to publicize will be added here.
+      </Typography>
+      <Divider />
+      <Typography variant="h3">
+        <PDFLink to={MemoriesOfMother}>Memories of Mother</PDFLink>  
+      </Typography>
+      <Typography variant="body1">
+        From <em>God of War</em> (2018)
       </Typography>
       <Divider />
       <Typography variant="h3">
