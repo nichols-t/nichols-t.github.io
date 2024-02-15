@@ -2,7 +2,7 @@
   "name": "nichols-t.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nichols-t.github.io/",
+  "homepage": "https://tynichols.com/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
