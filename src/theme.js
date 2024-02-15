@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { amber, pink } from '@material-ui/core/colors';
+// import { amber, pink } from '@material-ui/core/colors';
 
 const headerFonts = ['Open Sans',
   'Roboto',

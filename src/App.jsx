@@ -1,14 +1,11 @@
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline, Typography } from '@material-ui/core';
-import { Alert, AlertTitle } from '@material-ui/lab';
 import { Switch, Route } from 'react-router-dom';
 import theme from './theme';
 import Navbar from './Components/Navbar';
 import Introduction from './Sections/Introduction';
-import Projects from './Sections/Projects';
 import Guitar from './Sections/Guitar';
-import AboutMinimal from './Sections/AboutMinimal';
 import Spoiler from './Components/Spoiler';
 import PDFLink from './Components/PDFLink';
 import FinalCatch from './pdf/Final_Catch.pdf';

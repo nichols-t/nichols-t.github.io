@@ -1,20 +1,8 @@
 import React from 'react';
 import {
   Container,
-  Button,
-  List,
   Typography,
-  ListItem,
-  ListItemText,
 } from '@material-ui/core';
-import uniqid from 'uniqid';
-import { Link } from 'react-router-dom';
-
-const toDo = [
-  'Add detail on About page',
-  'Add projects on Projects page',
-  'Add a picture somewhere',
-];
 
 /**
  * This section serves as the site's homepage.
