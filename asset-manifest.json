@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.e0222f3e.chunk.js",
-    "main.js.map": "/static/js/main.e0222f3e.chunk.js.map",
+    "main.js": "/static/js/main.48a9bc63.chunk.js",
+    "main.js.map": "/static/js/main.48a9bc63.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f8fb009a.js",
     "runtime-main.js.map": "/static/js/runtime-main.f8fb009a.js.map",
-    "static/js/2.04fb2745.chunk.js": "/static/js/2.04fb2745.chunk.js",
-    "static/js/2.04fb2745.chunk.js.map": "/static/js/2.04fb2745.chunk.js.map",
+    "static/js/2.d0bf8b8f.chunk.js": "/static/js/2.d0bf8b8f.chunk.js",
+    "static/js/2.d0bf8b8f.chunk.js.map": "/static/js/2.d0bf8b8f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e5b9b06731f0862693c5a05948992a71.js": "/precache-manifest.e5b9b06731f0862693c5a05948992a71.js",
+    "precache-manifest.c4b5df2b43a04b7de3323376b3ea6b10.js": "/precache-manifest.c4b5df2b43a04b7de3323376b3ea6b10.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.04fb2745.chunk.js.LICENSE.txt": "/static/js/2.04fb2745.chunk.js.LICENSE.txt",
+    "static/js/2.d0bf8b8f.chunk.js.LICENSE.txt": "/static/js/2.d0bf8b8f.chunk.js.LICENSE.txt",
     "static/media/Eternal_Return.pdf": "/static/media/Eternal_Return.c8e61824.pdf",
     "static/media/Final_Catch.pdf": "/static/media/Final_Catch.6ee74539.pdf",
     "static/media/Geralt_of_Rivia.pdf": "/static/media/Geralt_of_Rivia.8e7f6ac2.pdf",
@@ -19,7 +19,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f8fb009a.js",
-    "static/js/2.04fb2745.chunk.js",
-    "static/js/main.e0222f3e.chunk.js"
+    "static/js/2.d0bf8b8f.chunk.js",
+    "static/js/main.48a9bc63.chunk.js"
   ]
 }
