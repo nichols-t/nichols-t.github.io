@@ -1,0 +1,2 @@
+# tynichols.com
+personal site
