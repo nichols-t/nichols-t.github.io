@@ -1,25 +1,87 @@
 <!DOCTYPE html>
 
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" type="text/css">
-  <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+    <script src="orbit.js"></script>
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-  <title>Ty Nichols | Home</title>
-  <main>
-    <hgroup>
-      <h1>Ty Nichols</h1>
-      <p><em>Senior Software Engineer, INTEGRITY Security Services, LLC</em></p>
-    </hgroup>
-    <hr />
-    <nav>
-      <a href="./index.html">Home</a>
-      |
-      <a href="./projects.html">Projects</a>
-      |
-      <a href="./about.html">About</a>
-    </nav>
-    <hr />
-  </main>
+    <h1><span class="backed-text">Ty Nichols</span></h1>
+    <h2 class="subtitle"><em><span class="backed-text">Senior Software Engineer, INTEGRITY Security Services,
+                LLC</span></em></h2>
+    <menu id="orbit-menu">
+        <li onclick="startOrbit(this, event)">
+            <div class="planet-circle" style="--orbit-size: 80vh; width: 10vh;">
+                <button class="planet-text-container">ABOUT</button>
+            </div>
+            <div class="orbit" style="--orbit-size: 80vh;"></div>
+        </li>
+        <li onclick="startOrbit(this, event)">
+            <div class="planet-circle" style="--orbit-size: 130vh; width: 15vh;">
+                <button class="planet-text-container">LINKS</button>
+            </div>
+            <div class="orbit" style="--orbit-size: 130vh;"></div>
+        </li>
+        <li onclick="startOrbit(this, event)">
+            <div class="planet-circle" style="--orbit-size: 180vh; width: 20vh;">
+                <button class="planet-text-container">PROJECTS</button>
+            </div>
+            <div class="orbit" style="--orbit-size: 180vh;"></div>
+        </li>
+    </menu>
+    <div id="projects" class="backed-text content pre-hidden">
+        <h1>Projects</h1>
+        <h2>Balatro Mods</h2>
+        <ul>
+            <li><a href="https://github.com/nichols-t/dragons_dogma_joker" target="_blank">Dragon's Dogma Joker</a>,
+                which "stores" played hearts and returns them with bonuses</li>
+            <li><a href="https://github.com/nichols-t/zstar_11_joker" target="_blank">Z*_11 Joker</a>, which rewards you
+                for a basic command of modular arithmetic</li>
+            <li><a href="https://github.com/nichols-t/turing-joker" target="_blank">(WIP) Turing Joker</a>, which
+                "reprograms" cards in your hand based on your Jokers</li>
+        </ul>
+        <h2>AI Countermeasures</h2>
+        <ul>
+            <li><a href="https://www.successfulbusiness.net" target="_blank">Nepenthes Tarpit</a>, created using
+                <a href="https://zadzmo.org/code/nepenthes/" target="_blank">Nepenthes</a> by Aaron of ZADZMO.org
+            </li>
+
+    </div>
+    <div id="about" class="backed-text content pre-hidden">
+        <h1>About</h1>
+        <h2>Other Links</h2>
+        <ul>
+            <li>
+                <a href="https://bsky.app/profile/tynichols.com" target="_blank">
+                    Bluesky
+                </a>
+            </li>
+            <li>
+                <a href="https://youtube.com/playlist?list=PLdvABG25bVf5rPlDHpOIWaOg8iUuBRhZt&" target="_blank">Haute
+                    Couture
+                </a> (High Quality Youtube Playlist)
+            </li>
+        </ul>
+    </div>
+    <div id="links" class="backed-text content pre-hidden">
+        <h1>Links</h1>
+        <ul>
+            <li>
+                <a href="https://github.com/nichols-t" target="_blank">
+                    Github
+                </a>
+            </li>
+        </ul>
+    </div>
+    <menu id="#back-menu">
+        <li onclick="resetOrbits()">
+            <a href="">
+                <button class="back-button">
+                    <span class="back-text">BACK</span>
+                </button>
+            </a>
+        </li>
+    </menu>
 </body>
