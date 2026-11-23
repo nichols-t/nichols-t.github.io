@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Atkinson;
+    src: url("/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf") format('truetype');
+}
+
+:root {
+    --font-base: Atkinson;
+    font-family: var(--font-base);
+}
+
+h1 {
+    font-family: var(--font-base);
+}
