@@ -5,9 +5,38 @@
 
 :root {
     --font-base: Atkinson;
+    /* Use REM here, and set in :root to override size for all of page */
+    --font-size-default: 1.25rem;
     font-family: var(--font-base);
+    font-size: var(--font-size-default);
 }
 
-h1 {
-    font-family: var(--font-base);
+header {
+    display: grid;
+    place-items: center;
+}
+
+p[role="doc-subtitle"] {
+    margin: unset;
+}
+
+footer {
+    display: grid;
+    place-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    padding: unset;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+article {
+    display: grid;
+    place-items: center;
 }
