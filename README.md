@@ -13,3 +13,7 @@
     - Write up goals/interests
     - Write up each bookmarked project from notes
     - Decide on which writings to include
+
+
+## Notes
+- Check against [W3 Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftynichols.com%2Findex.html) for mistakes
