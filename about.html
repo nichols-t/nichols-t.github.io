@@ -26,26 +26,56 @@ you're curious -->
 
 <body>
     <header>
-    <a href="/index.html">
-        <h1>Ty Nichols</h1>
-    </a>
-    <p role="doc-subtitle">Engineer & Artist</p>
+    <div>
+        <a href="/index.html">
+            <h1>Ty Nichols</h1>
+        </a>
+        <p role="doc-subtitle">Engineer & Artist</p>
+    </div>
     <nav>
         <ul>
             <li><a href="/arts-and-crafts.html">Arts and Crafts</a></li>
-            <li><a href="#writings">Writings</a></li>
+            <li><a href="/writings.html">Writings</a></li>
             <li><a href="/about.html">About Me</a></li>
         </ul>
     </nav>
 </header>
-    <hr>
-    <article>
-        <p>More coming soon.</p>
-    </article>
+    <div id="#grid">
+        <article>
+            <h2>About Me</h2>
+            <p>Coming soon.</p>
+        </article>
+        <article>
+            <h2>About This Site</h2>
+            <p>This site is still a work in progress.</p>
+            <p>This site is produced by a simple <code>substitution.sh</code> script that
+                emplaces template pages into content pages. These static files are then served via
+                GitHub pages.
+            </p>
+            <p>HTML fragments are stored in a <code>_templates</code> folder, while
+                "actual content" is stored in the <code>_content</code> folder. The content
+                pages have lines like <code>&#36;HEADER</code> that will be substitutded for the
+                contents of one of the template files.</p>
+            <h2>Design</h2>
+            <p>The colors for this site are taken from Sanzo Wada's <a
+                    href="https://colors.elwyn.co/#:~:text=Combination%20%23305" target="_blank">
+                    color combination #305.
+                </a></p>
+            <p>The source code can be found on <a href="https://github.com/nichols-t/nichols-t.github.io"
+                    target="_blank">GitHub</a>.</p>
+        </article>
+    </div>
+
 
     <footer>
-    <img src="/image/made-by-humans.avif" width="320" height="180"
-        alt="Made by humans. No generative AI was used in the creation of this work.">
+    <div class="frame-outer">
+        <div class="frame-middle">
+            <div class="frame-inner">
+                <img id="made-by-humans" src="/image/made-by-humans.avif" width="320" height="180"
+                    alt="Made by humans. No generative AI was used in the creation of this work.">
+            </div>
+        </div>
+    </div>
 </footer>
 </body>
 

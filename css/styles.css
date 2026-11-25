@@ -10,34 +10,187 @@
     --font-size-default: 1.25rem;
     font-family: var(--font-base);
     font-size: var(--font-size-default);
+    /* https://colorcombinations.org/palettes/kariyasu-rikyu/ */
+    --color-grass-yellow: #DCCB7A;
+    --color-rikyu-grey: #878A74;
+    --color-silk-white: #F3EBDA;
+    --color-natural: #F8F4E9;
+    --color-sulphur-yellow: #f5ecc2;
+    --color-pale-lemon-yellow: #ffefae;
+    /* Wada #305 from https://colors.elwyn.co/*/
+    --color-pinkish-cinnamon: #eeb480;
+    --color-apricot-yellow: #ffdd00;
+    --color-citron-yellow: #b2b73e;
+    --color-turquoise-green: #b5decc;
+    /* Wada #46 */
+    --color-black: #111314;
+    background-color: white;
+    --text-color-default: var(--color-black);
+    color: var(--text-color-default);
+    --nav-box-shadow: inset 0 0 0 var(--color-apricot-yellow);
+    /* color: white; */
+    /* Prevents scrolling below the body which makes the background appear white.
+    Could probably fix by setting :root background-color instead but I think that
+    feels more dangerous to me. */
+    overscroll-behavior: none;
+}
+
+body {
+    /* max-width: 1000px; */
+    margin-left: auto;
+    margin-right: auto;
+    /* Default of 8 causes body background to appear underneath footer */
+    /* TODO preserve this or not */
+    margin-bottom: 0;
+    margin-top: 0;
+    background-color: var(--color-turquoise-green);
+    /* background-color: var(--color-sulphur-yellow);
+    color: var(--color-deep-slate-olive); */
+    min-height: 100vh;
+}
+
+#grid {
+    display: grid;
 }
 
 header {
     display: grid;
     place-items: center;
+    background-color: var(--color-pinkish-cinnamon);
+    border-bottom-width: 8px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-apricot-yellow);
+}
+
+header a,
+header a:visited {
+    color: var(--text-color-default);
+    text-decoration: unset;
+}
+
+h1 {
+    margin: unset;
 }
 
 p[role="doc-subtitle"] {
     margin: unset;
+    margin-bottom: auto;
+    font-style: italic;
 }
 
 footer {
     display: grid;
     place-items: center;
+    margin-top: 1rem;
 }
 
 nav ul {
     list-style: none;
-    display: inline-block;
     text-align: center;
     padding: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 nav ul li {
     display: inline-block;
 }
 
+nav ul li a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+nav ul li+li {
+    border-left: 2px solid var(--color-black);
+}
+
+nav ul li {
+    box-shadow: var(--nav-box-shadow);
+    transition: box-shadow .2s ease-in-out;
+}
+
+nav ul li:hover {
+    box-shadow: inset 200px 0 0 0 var(--color-apricot-yellow);
+}
+
 article {
     display: grid;
     place-items: center;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TODO: See if CSS auto grid can replace the breakpoints here */
+#artscrafts-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* TODO these are just a container for the later content */
+#artscrafts-grid-container div {
+    background-color: var(--color-citron-yellow);
+    min-height: 40vh;
+    border-style: double;
+    border-color: var(--color-black);
+    border-width: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    #artscrafts-grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #artscrafts-grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #grid {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    header {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* TODO: Pick colors and maybe some gradient stuff */
+.frame-outer {
+    border-width: 0.45rem;
+    border-color: var(--color-black);
+    /* border-image: linear-gradient(to bottom right, #253121, #649278) 30; */
+    border-style: solid;
+    /* box-shadow: 0.5rem 0.5rem 0.05rem var(--color-citron-yellow); */
+}
+
+.frame-middle {
+    border-width: 0.45rem;
+    border-color: var(--color-apricot-yellow);
+    border-style: double;
+    background-color: var(--color-black);
+}
+
+.frame-inner {
+    border-style: ridge;
+    border-width: 0.2rem;
+    border-color: var(--color-black);
+    /* border-image: linear-gradient(to top left, #253121, #649278) 30; */
+    /* This one contains the actual elements, and thus we need to make sure
+    that things are centered within it */
+    display: grid;
+    align-items: center;
+}
+
+.frame-inner img {
+    background-color: var(--color-pinkish-cinnamon);
+    padding: 1rem;
 }

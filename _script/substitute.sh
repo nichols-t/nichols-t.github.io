@@ -19,6 +19,7 @@ declare -a PAGES=(
     "index.html"
     "about.html"
     "arts-and-crafts.html"
+    "writings.html"
 )
 
 for page in "${PAGES[@]}"; do
