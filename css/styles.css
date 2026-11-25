@@ -38,11 +38,6 @@
     background-color: var(--backround-color-default);
     color: var(--text-color-default);
     --nav-box-shadow: inset 0 0 0 var(--color-apricot-yellow);
-    /* color: white; */
-    /* Prevents scrolling below the body which makes the background appear white.
-    Could probably fix by setting :root background-color instead but I think that
-    feels more dangerous to me. */
-    /* overscroll-behavior: none; */
 }
 
 body {
@@ -56,6 +51,10 @@ body {
     /* background-color: var(--color-sulphur-yellow);
     color: var(--color-deep-slate-olive); */
     min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /* justify-content: space-between; */
     background-color: var(--color-white);
     /* All backgrounds from heropatterns.com */
     /* Simple houndstooth */
@@ -69,6 +68,10 @@ body {
     /* background-image: url("data:image/svg+xml,%3Csvg width='48' height='64' viewBox='0 0 48 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M48 28v-4L36 12 24 24 12 12 0 24v4l4 4-4 4v4l12 12 12-12 12 12 12-12v-4l-4-4 4-4zM8 32l-6-6 10-10 10 10-6 6 6 6-10 10L2 38l6-6zm12 0l4-4 4 4-4 4-4-4zm12 0l-6-6 10-10 10 10-6 6 6 6-10 10-10-10 6-6zM0 16L10 6 4 0h4l4 4 4-4h4l-6 6 10 10L34 6l-6-6h4l4 4 4-4h4l-6 6 10 10v4L36 8 24 20 12 8 0 20v-4zm0 32l10 10-6 6h4l4-4 4 4h4l-6-6 10-10 10 10-6 6h4l4-4 4 4h4l-6-6 10-10v-4L36 56 24 44 12 56 0 44v4z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
 }
 
+.flex-spacer {
+    flex-grow: 1;
+}
+
 #grid {
     display: grid;
 }
@@ -80,7 +83,7 @@ header {
     border-bottom-width: 0.1rem;
     border-bottom-style: solid;
     border-bottom-color: var(--color-black);
-    box-shadow: 0px 10px var(--color-intense-cherry);
+    box-shadow: 0px 10px color-mix(in srgb, var(--color-intense-cherry), transparent 30%);
 }
 
 header a,
@@ -106,9 +109,10 @@ footer {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-top: 2px solid var(--color-black);
-    background-color: var(--color-mint-leaf);
+    background-color: color-mix(in srgb, var(--color-sulphur-yellow), transparent 20%);
     overscroll-behavior: none;
 }
+
 
 nav ul {
     list-style: none;
@@ -239,12 +243,15 @@ code {
     padding-right: 0.1rem;
 }
 
+
+/* Approach for matted frame for images. Adapted from
+https://thinkux.ca/blog/Creating-Framed-Matted-Pictures-Using-CSS/ */
 /* Forms the outer frame */
 figure {
     position: relative;
     background: var(--color-black);
     border: 8px groove color-mix(in srgb, var(--color-black), var(--color-white) 20%);
-    box-shadow: 10px 10px color-mix(in srgb, var(--color-intense-cherry), transparent 80%);
+    box-shadow: 10px 10px color-mix(in srgb, var(--color-intense-cherry), transparent 60%);
 }
 
 /* Forms the mat */
@@ -272,9 +279,9 @@ figure img {
 }
 
 figure.mat-yellow::before {
-    background-color: var(--color-banana-cream);
+    background-color: var(--color-mint-leaf);
 }
 
 figure.mat-yellow img {
-    border: 2px inset var(--color-banana-cream);
+    border: 2px inset var(--color-mint-leaf);
 }
