@@ -4,8 +4,14 @@
     src: url("/font/AtkinsonHyperlegibleNext-VariableFont_wght.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: AtkinsonMono;
+    src: url("/font//AtkinsonHyperlegibleMono-VariableFont_wght.ttf") format('truetype');
+}
+
 :root {
     --font-base: Atkinson;
+    --font-mono: AtkinsonMono;
     /* Use REM here, and set in :root to override size for all of page */
     --font-size-default: 1.25rem;
     font-family: var(--font-base);
@@ -236,7 +242,7 @@ how I'm actually going to do projects and stuff */
 /* INDIVIDUAL ELEMENT STYLING */
 
 code {
-    /* TODO font family */
+    font-family: var(--font-mono);
     color: var(--color-taupe-grey);
     background-color: color-mix(in srgb, var(--color-onyx), transparent 95%);
     padding-left: 0.1rem;
@@ -258,6 +264,8 @@ figure {
 figure::before {
     content: "";
     position: absolute;
+    /* TODO: Need to make sure that this math will work with any image. I'm
+    not sure that it will. */
     top: 3.0303%;
     bottom: 3.0303%;
     left: 2.5%;
@@ -270,6 +278,8 @@ figure::before {
 
 figure img {
     position: relative;
+    /* TODO: Need to figure out if this math is actually going to work for any
+    image. I'm not sure that it will. */
     max-width: 77%;
     height: auto;
     align-self: center;
@@ -278,10 +288,10 @@ figure img {
     box-shadow: 5px 5px 5px 20px color-mix(in srgb, var(--color-taupe-grey), transparent 20%) inset;
 }
 
-figure.mat-yellow::before {
+figure.mat-green::before {
     background-color: var(--color-mint-leaf);
 }
 
-figure.mat-yellow img {
+figure.mat-green img {
     border: 2px inset var(--color-mint-leaf);
 }
