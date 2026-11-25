@@ -23,16 +23,26 @@
     --color-citron-yellow: #b2b73e;
     --color-turquoise-green: #b5decc;
     /* Wada #46 */
-    --color-black: #111314;
-    background-color: white;
-    --text-color-default: var(--color-black);
+    /* new palette */
+    --color-snow: #F8F2F3;
+    --color-banana-cream: #FFED65;
+    --color-mint-leaf: #61C9A8;
+    --color-onyx: #0C1713;
+    --color-taupe-grey: #77625C;
+    --color-intense-cherry: #BA3B46;
+
+    --backround-color-default: var(--color-snow);
+    --text-color-default: var(--color-onyx);
+    --color-black: var(--color-onyx);
+    --color-white: var(--color-snow);
+    background-color: var(--backround-color-default);
     color: var(--text-color-default);
     --nav-box-shadow: inset 0 0 0 var(--color-apricot-yellow);
     /* color: white; */
     /* Prevents scrolling below the body which makes the background appear white.
     Could probably fix by setting :root background-color instead but I think that
     feels more dangerous to me. */
-    overscroll-behavior: none;
+    /* overscroll-behavior: none; */
 }
 
 body {
@@ -43,10 +53,20 @@ body {
     /* TODO preserve this or not */
     margin-bottom: 0;
     margin-top: 0;
-    background-color: var(--color-turquoise-green);
     /* background-color: var(--color-sulphur-yellow);
     color: var(--color-deep-slate-olive); */
     min-height: 100vh;
+    background-color: var(--color-white);
+    /* All backgrounds from heropatterns.com */
+    /* Simple houndstooth */
+    /* background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
+    /* Overlapping diamonds */
+    /* background-image: url("data:image/svg+xml,%3Csvg width='48' height='64' viewBox='0 0 48 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M48 28v-4L36 12 24 24 12 12 0 24v4l4 4-4 4v4l12 12 12-12 12 12 12-12v-4l-4-4 4-4zM8 32l-6-6 10-10 10 10-6 6 6 6-10 10L2 38l6-6zm12 0l4-4 4 4-4 4-4-4zm12 0l-6-6 10-10 10 10-6 6 6 6-10 10-10-10 6-6zM0 16L10 6 4 0h4l4 4 4-4h4l-6 6 10 10L34 6l-6-6h4l4 4 4-4h4l-6 6 10 10v4L36 8 24 20 12 8 0 20v-4zm0 32l10 10-6 6h4l4-4 4 4h4l-6-6 10-10 10 10-6 6h4l4-4 4 4h4l-6-6 10-10v-4L36 56 24 44 12 56 0 44v4z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
+    /* Diamond ridges*/
+    /* background-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E"); */
+    /* Subway tiles */
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    /* background-image: url("data:image/svg+xml,%3Csvg width='48' height='64' viewBox='0 0 48 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M48 28v-4L36 12 24 24 12 12 0 24v4l4 4-4 4v4l12 12 12-12 12 12 12-12v-4l-4-4 4-4zM8 32l-6-6 10-10 10 10-6 6 6 6-10 10L2 38l6-6zm12 0l4-4 4 4-4 4-4-4zm12 0l-6-6 10-10 10 10-6 6 6 6-10 10-10-10 6-6zM0 16L10 6 4 0h4l4 4 4-4h4l-6 6 10 10L34 6l-6-6h4l4 4 4-4h4l-6 6 10 10v4L36 8 24 20 12 8 0 20v-4zm0 32l10 10-6 6h4l4-4 4 4h4l-6-6 10-10 10 10-6 6h4l4-4 4 4h4l-6-6 10-10v-4L36 56 24 44 12 56 0 44v4z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
 }
 
 #grid {
@@ -56,10 +76,11 @@ body {
 header {
     display: grid;
     place-items: center;
-    background-color: var(--color-pinkish-cinnamon);
-    border-bottom-width: 8px;
+    background-color: var(--backround-color-default);
+    border-bottom-width: 0.1rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--color-apricot-yellow);
+    border-bottom-color: var(--color-black);
+    box-shadow: 0px 10px var(--color-intense-cherry);
 }
 
 header a,
@@ -82,6 +103,11 @@ footer {
     display: grid;
     place-items: center;
     margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 2px solid var(--color-black);
+    background-color: var(--color-mint-leaf);
+    overscroll-behavior: none;
 }
 
 nav ul {
@@ -97,45 +123,84 @@ nav ul li {
 }
 
 nav ul li a {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-nav ul li+li {
-    border-left: 2px solid var(--color-black);
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
 }
 
 nav ul li {
+    /* TODO clean up var usage here */
     box-shadow: var(--nav-box-shadow);
     transition: box-shadow .2s ease-in-out;
 }
 
-nav ul li:hover {
-    box-shadow: inset 200px 0 0 0 var(--color-apricot-yellow);
+nav ul li:hover,
+nav ul li:active {
+    box-shadow: inset 200px 0 0 0 var(--color-banana-cream);
 }
 
 article {
-    display: grid;
-    place-items: center;
+    /* Layout */
+    /* display: grid;
+    place-items: center; */
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2rem;
+    /* Interior items should have some space on the sides */
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    /* Decoration */
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: var(--color-onyx);
+    background-color: var(--color-white);
+    box-shadow:
+        10px 10px var(--color-taupe-grey),
+        -5px 15px color-mix(in srgb, var(--color-intense-cherry), transparent 60%),
+        20px -5px color-mix(in srgb, var(--color-banana-cream), transparent 60%);
+}
+
+article h2 {
+    text-align: center;
 }
 
 /* TODO: See if CSS auto grid can replace the breakpoints here */
 #artscrafts-grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-/* TODO these are just a container for the later content */
-#artscrafts-grid-container div {
-    background-color: var(--color-citron-yellow);
+/* TODO All of these should be considered temporary until I figure out
+how I'm actually going to do projects and stuff */
+.project-preview {
     min-height: 40vh;
-    border-style: double;
+    border-style: solid;
+    border-width: 2px;
     border-color: var(--color-black);
-    border-width: 4px;
+    margin: 1rem;
+    box-shadow: 10px 10px var(--color-taupe-grey);
 }
+
+.project-preview:nth-of-type(even) {
+    background-color: var(--color-banana-cream);
+}
+
+.project-preview:nth-of-type(odd) {
+    background-color: var(--color-intense-cherry);
+}
+
+.project-preview p {
+    margin: 1rem;
+    padding: 0.25rem;
+    background-color: var(--color-white);
+}
+
+/*****************************************************************************/
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
     #artscrafts-grid-container {
@@ -163,34 +228,53 @@ article {
     }
 }
 
-/* TODO: Pick colors and maybe some gradient stuff */
-.frame-outer {
-    border-width: 0.45rem;
-    border-color: var(--color-black);
-    /* border-image: linear-gradient(to bottom right, #253121, #649278) 30; */
-    border-style: solid;
-    /* box-shadow: 0.5rem 0.5rem 0.05rem var(--color-citron-yellow); */
+/*****************************************************************************/
+/* INDIVIDUAL ELEMENT STYLING */
+
+code {
+    /* TODO font family */
+    color: var(--color-taupe-grey);
+    background-color: color-mix(in srgb, var(--color-onyx), transparent 95%);
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
 }
 
-.frame-middle {
-    border-width: 0.45rem;
-    border-color: var(--color-apricot-yellow);
-    border-style: double;
-    background-color: var(--color-black);
+/* Forms the outer frame */
+figure {
+    position: relative;
+    background: var(--color-black);
+    border: 8px groove color-mix(in srgb, var(--color-black), var(--color-white) 20%);
+    box-shadow: 10px 10px color-mix(in srgb, var(--color-intense-cherry), transparent 80%);
 }
 
-.frame-inner {
-    border-style: ridge;
-    border-width: 0.2rem;
-    border-color: var(--color-black);
-    /* border-image: linear-gradient(to top left, #253121, #649278) 30; */
-    /* This one contains the actual elements, and thus we need to make sure
-    that things are centered within it */
+/* Forms the mat */
+figure::before {
+    content: "";
+    position: absolute;
+    top: 3.0303%;
+    bottom: 3.0303%;
+    left: 2.5%;
+    right: 2.5%;
     display: grid;
     align-items: center;
+    border: 4px groove color-mix(in srgb, var(--color-black), var(--color-white) 20%);
+    box-shadow: 0px 2px 10px 5px color-mix(in srgb, var(--color-taupe-grey), transparent 40%) inset;
 }
 
-.frame-inner img {
-    background-color: var(--color-pinkish-cinnamon);
-    padding: 1rem;
+figure img {
+    position: relative;
+    max-width: 77%;
+    height: auto;
+    align-self: center;
+    margin: 10%;
+    z-index: 3;
+    box-shadow: 5px 5px 5px 20px color-mix(in srgb, var(--color-taupe-grey), transparent 20%) inset;
+}
+
+figure.mat-yellow::before {
+    background-color: var(--color-banana-cream);
+}
+
+figure.mat-yellow img {
+    border: 2px inset var(--color-banana-cream);
 }
