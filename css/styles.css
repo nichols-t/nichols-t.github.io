@@ -16,34 +16,48 @@
     --font-size-default: 1.25rem;
     font-family: var(--font-base);
     font-size: var(--font-size-default);
-    /* https://colorcombinations.org/palettes/kariyasu-rikyu/ */
-    --color-grass-yellow: #DCCB7A;
-    --color-rikyu-grey: #878A74;
-    --color-silk-white: #F3EBDA;
-    --color-natural: #F8F4E9;
-    --color-sulphur-yellow: #f5ecc2;
-    --color-pale-lemon-yellow: #ffefae;
-    /* Wada #305 from https://colors.elwyn.co/*/
-    --color-pinkish-cinnamon: #eeb480;
-    --color-apricot-yellow: #ffdd00;
-    --color-citron-yellow: #b2b73e;
-    --color-turquoise-green: #b5decc;
-    /* Wada #46 */
-    /* new palette */
-    --color-snow: #F8F2F3;
-    --color-banana-cream: #FFED65;
-    --color-mint-leaf: #61C9A8;
-    --color-onyx: #0C1713;
-    --color-taupe-grey: #77625C;
-    --color-intense-cherry: #BA3B46;
 
-    --backround-color-default: var(--color-snow);
-    --text-color-default: var(--color-onyx);
+    /* BASE COLORS */
+    /* The neutrals are from Coolors I believe, and the others are from Sanzo Wada
+    combinations. The red-orange and violet is from #164 but I did not take the orange.
+    The vistoris lake is from #226 which also uses violet. */
+    --color-snow: #F8F2F3;
+    --color-onyx: #0C1713;
+    --color-red-orange: #DD4027;
+    --color-violet: #4F4086;
+    --color-vistoris-lake: #6d4145;
+
+    /** ACTUAL THEME STARTS HERE
+    All elements should pick colors from the set of vars below.
+    **/
+    /* Used as "primary" color */
+    --color-primary: var(--color-red-orange);
+    --color-primary-70p: color-mix(in srgb, var(--color-primary), transparent 30%);
+    --color-primary-40p: color-mix(in srgb, var(--color-primary), transparent 60%);
+    /* Used as "accent" color */
+    --color-accent: var(--color-violet);
+    --color-accent-40p: color-mix(in srgb, var(--color-accent), transparent 60%);
+    /* Used as black */
     --color-black: var(--color-onyx);
+    /* Used as white */
     --color-white: var(--color-snow);
+    /* Used as medium-value neutral */
+    --color-neutral: var(--color-vistoris-lake);
+    --color-neutral-60p: color-mix(in srgb, var(--color-neutral), transparent 40%);
+
+    /* ELEMENT COLOR SELECTION */
+    --backround-color-default: var(--color-white);
+    --text-color-default: var(--color-black);
+    --h1-color: var(--color-primary);
+    --border-color: var(--color-black);
+    --header-box-shadow-color: var(--color-primary-70p);
+    --box-shadow-primary-color: var(--color-primary-40p);
+    --box-shadow-neutral-color: var(--color-neutral-60p);
+    --box-shadow-accent-color: var(--color-accent-40p);
+    --code-text-color: var(--color-neutral);
+    --code-background-color: color-mix(in srgb, var(--color-black), transparent 95%);
     background-color: var(--backround-color-default);
     color: var(--text-color-default);
-    --nav-box-shadow: inset 0 0 0 var(--color-apricot-yellow);
 }
 
 body {
@@ -54,24 +68,13 @@ body {
     /* TODO preserve this or not */
     margin-bottom: 0;
     margin-top: 0;
-    /* background-color: var(--color-sulphur-yellow);
-    color: var(--color-deep-slate-olive); */
     min-height: 100vh;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    /* justify-content: space-between; */
-    background-color: var(--color-white);
-    /* All backgrounds from heropatterns.com */
-    /* Simple houndstooth */
-    /* background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
-    /* Overlapping diamonds */
-    /* background-image: url("data:image/svg+xml,%3Csvg width='48' height='64' viewBox='0 0 48 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M48 28v-4L36 12 24 24 12 12 0 24v4l4 4-4 4v4l12 12 12-12 12 12 12-12v-4l-4-4 4-4zM8 32l-6-6 10-10 10 10-6 6 6 6-10 10L2 38l6-6zm12 0l4-4 4 4-4 4-4-4zm12 0l-6-6 10-10 10 10-6 6 6 6-10 10-10-10 6-6zM0 16L10 6 4 0h4l4 4 4-4h4l-6 6 10 10L34 6l-6-6h4l4 4 4-4h4l-6 6 10 10v4L36 8 24 20 12 8 0 20v-4zm0 32l10 10-6 6h4l4-4 4 4h4l-6-6 10-10 10 10-6 6h4l4-4 4 4h4l-6-6 10-10v-4L36 56 24 44 12 56 0 44v4z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
-    /* Diamond ridges*/
-    /* background-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E"); */
-    /* Subway tiles */
+    background-color: var(--backround-color-default);
+    /* SVG from heropatterns.com */
     background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-    /* background-image: url("data:image/svg+xml,%3Csvg width='48' height='64' viewBox='0 0 48 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M48 28v-4L36 12 24 24 12 12 0 24v4l4 4-4 4v4l12 12 12-12 12 12 12-12v-4l-4-4 4-4zM8 32l-6-6 10-10 10 10-6 6 6 6-10 10L2 38l6-6zm12 0l4-4 4 4-4 4-4-4zm12 0l-6-6 10-10 10 10-6 6 6 6-10 10-10-10 6-6zM0 16L10 6 4 0h4l4 4 4-4h4l-6 6 10 10L34 6l-6-6h4l4 4 4-4h4l-6 6 10 10v4L36 8 24 20 12 8 0 20v-4zm0 32l10 10-6 6h4l4-4 4 4h4l-6-6 10-10 10 10-6 6h4l4-4 4 4h4l-6-6 10-10v-4L36 56 24 44 12 56 0 44v4z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E"); */
 }
 
 .flex-spacer {
@@ -88,8 +91,8 @@ header {
     background-color: var(--backround-color-default);
     border-bottom-width: 0.1rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--color-black);
-    box-shadow: 0px 10px color-mix(in srgb, var(--color-intense-cherry), transparent 30%);
+    border-bottom-color: var(--border-color);
+    box-shadow: 0px 10px var(--header-box-shadow-color);
 }
 
 header a,
@@ -106,32 +109,8 @@ header a:visited,
     overscroll-behavior: none;
 }
 
-@media screen and (max-width: 768px) {
-    #homepage-container {
-        grid-template-columns: 1fr;
-    }
-
-    #homepage-nav-block {
-        border-left: none;
-        border-top: 4px solid var(--color-black);
-    }
-
-    #homepage-container h1 {
-        margin-top: 0;
-        margin-left: 0;
-        text-align: center;
-
-    }
-}
-
-@media screen and (min-width: 768px) {
-    #homepage-container h1 {
-        margin-left: 5vw;
-    }
-}
-
 h1 {
-    color: var(--color-intense-cherry);
+    color: var(--h1-color);
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -140,7 +119,7 @@ h1 {
     margin-top: unset;
     margin-bottom: unset;
     font-size: max(2rem, 10vw);
-    margin-top: 60vh;
+    margin-top: 50vh;
 }
 
 #homepage-container p[role="doc-subtitle"] {
@@ -151,10 +130,35 @@ h1 {
 #homepage-nav-block {
     height: 100vh;
     display: inline-block;
-    border-left: 4px solid var(--color-black);
+    border-left: 4px solid var(--border-color);
 }
 
-#homepage-nav-block section {
+#homepage-nav-block ul {
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+#homepage-nav-block li {
+    display: block;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2vw;
+    margin-right: 2vw;
+
+    /* Decoration: match article, section selector */
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: var(--border-color);
+    background-color: var(--backround-color-default);
+    box-shadow:
+        10px 10px var(--box-shadow-neutral-color),
+        -5px 15px var(--box-shadow-primary-color),
+        20px -5px var(--box-shadow-accent-color);
+
+}
+
+#homepage-nav-block li a {
     margin-left: 2rem;
     margin-right: 2rem;
     padding: 1rem;
@@ -166,6 +170,7 @@ p[role="doc-subtitle"] {
     font-style: italic;
     text-align: center;
     font-size: 1rem;
+    color: var(--color-neutral);
 }
 
 footer {
@@ -174,8 +179,8 @@ footer {
     margin-top: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-top: 2px solid var(--color-black);
-    background-color: color-mix(in srgb, var(--color-sulphur-yellow), transparent 20%);
+    border-top: 2px solid var(--border-color);
+    background-color: var(--box-shadow-accent-color);
 }
 
 
@@ -196,16 +201,6 @@ nav ul li a {
     padding-right: 0.2rem;
 }
 
-nav ul li {
-    /* TODO clean up var usage here */
-    box-shadow: var(--nav-box-shadow);
-    transition: box-shadow .2s ease-in-out;
-}
-
-nav ul li:hover,
-nav ul li:active {
-    box-shadow: inset 200px 0 0 0 var(--color-banana-cream);
-}
 
 article,
 section {
@@ -216,6 +211,7 @@ section {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     /* Interior items should have some space on the sides */
     padding-left: 1rem;
     padding-right: 1rem;
@@ -223,12 +219,12 @@ section {
     /* Decoration */
     border-style: solid;
     border-width: 0.1rem;
-    border-color: var(--color-onyx);
-    background-color: var(--color-white);
+    border-color: var(--border-color);
+    background-color: var(--backround-color-default);
     box-shadow:
-        10px 10px var(--color-taupe-grey),
-        -5px 15px color-mix(in srgb, var(--color-intense-cherry), transparent 60%),
-        20px -5px color-mix(in srgb, var(--color-banana-cream), transparent 60%);
+        10px 10px var(--box-shadow-neutral-color),
+        -5px 15px var(--box-shadow-primary-color),
+        20px -5px var(--box-shadow-accent-color);
 }
 
 article h2 {
@@ -244,37 +240,34 @@ article h2 {
     padding-right: 1rem;
 }
 
-/* TODO All of these should be considered temporary until I figure out
-how I'm actually going to do projects and stuff */
-.project-preview {
-    min-height: 40vh;
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--color-black);
-    margin: 1rem;
-    box-shadow: 10px 10px var(--color-taupe-grey);
-}
-
-.project-preview:nth-of-type(even) {
-    background-color: var(--color-banana-cream);
-}
-
-.project-preview:nth-of-type(odd) {
-    background-color: var(--color-intense-cherry);
-}
-
-.project-preview p {
-    margin: 1rem;
-    padding: 0.25rem;
-    background-color: var(--color-white);
-}
-
 /*****************************************************************************/
 /* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    #homepage-container h1 {
+        margin-left: 5vw;
+    }
+}
 
 @media screen and (max-width: 768px) {
     #artscrafts-grid-container {
         grid-template-columns: 1fr;
+    }
+
+    #homepage-container {
+        grid-template-columns: 1fr;
+    }
+
+    #homepage-nav-block {
+        border-left: none;
+        border-top: 4px solid var(--border-color);
+    }
+
+    #homepage-container h1 {
+        margin-top: 0;
+        margin-left: 0;
+        text-align: center;
+
     }
 }
 
@@ -303,8 +296,8 @@ how I'm actually going to do projects and stuff */
 
 code {
     font-family: var(--font-mono);
-    color: var(--color-taupe-grey);
-    background-color: color-mix(in srgb, var(--color-onyx), transparent 95%);
+    color: var(--code-text-color);
+    background-color: var(--code-background-color);
     padding-left: 0.1rem;
     padding-right: 0.1rem;
 }
@@ -315,9 +308,9 @@ https://thinkux.ca/blog/Creating-Framed-Matted-Pictures-Using-CSS/ */
 /* Forms the outer frame */
 figure {
     position: relative;
-    background: var(--color-black);
-    border: 8px groove color-mix(in srgb, var(--color-black), var(--color-white) 20%);
-    box-shadow: 10px 10px color-mix(in srgb, var(--color-intense-cherry), transparent 60%);
+    background: color-mix(in srgb, var(--color-neutral), var(--color-black) 80%);
+    border: 8px groove color-mix(in srgb, var(--color-neutral), var(--color-black) 40%);
+    box-shadow: 10px 10px var(--box-shadow-accent-color);
 }
 
 /* Forms the mat */
@@ -332,8 +325,9 @@ figure::before {
     right: 2.5%;
     display: grid;
     align-items: center;
-    border: 4px groove color-mix(in srgb, var(--color-black), var(--color-white) 20%);
-    box-shadow: 0px 2px 10px 5px color-mix(in srgb, var(--color-taupe-grey), transparent 40%) inset;
+    border: 4px groove color-mix(in srgb, var(--color-neutral), var(--color-black) 40%);
+    box-shadow: 0px 2px 10px 10px color-mix(in srgb, var(--color-neutral), transparent 40%) inset;
+    background-color: color-mix(in srgb, var(--color-primary), var(--color-white) 20%);
 }
 
 figure img {
@@ -345,13 +339,32 @@ figure img {
     align-self: center;
     margin: 10%;
     z-index: 3;
-    box-shadow: 5px 5px 5px 20px color-mix(in srgb, var(--color-taupe-grey), transparent 20%) inset;
+    border: 2px inset var(--color-primary);
 }
 
-figure.mat-green::before {
-    background-color: var(--color-mint-leaf);
+
+/* Project container windows */
+/* TODO this should be considered temporary until I figure out
+how I'm actually going to do projects and stuff */
+.project-preview {
+    min-height: 40vh;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--border-color);
+    margin: 1rem;
+    box-shadow: 10px 10px var(--box-shadow-neutral-color);
 }
 
-figure.mat-green img {
-    border: 2px inset var(--color-mint-leaf);
+.project-preview:nth-of-type(even) {
+    background-color: var(--color-accent);
+}
+
+.project-preview:nth-of-type(odd) {
+    background-color: var(--color-primary);
+}
+
+.project-preview p {
+    margin: 1rem;
+    padding: 0.25rem;
+    background-color: var(--color-white);
 }

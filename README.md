@@ -1,12 +1,13 @@
 # Personal Site
 
 ## TODOs
-- **Check if Italic version of Atkinson font is actually needed**
-- **Decide on colors:**
-    - Better draft of colors is up, but I think I'd still like to adjust
+- **Finalize colors:**
+    - Decent colors are in, but may want to adjust some neutrals and add another
 - **Design elements:**
     - I think nav items are working and overall layout is working
     - Frame CSS with different mat colors as needed
+    - Maybe some use for decoration on article headers?
+    - Maybe add some "trim" or something like this to certain elements (unsure yet how this would be done).
 - **Content:**
     - Write up work experience
     - Write up goals/interests
