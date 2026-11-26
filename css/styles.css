@@ -367,3 +367,10 @@ how I'm actually going to do projects and stuff */
     padding: 0.25rem;
     background-color: var(--color-white);
 }
+
+aside {
+    background-color: var(--color-primary-40p);
+    font-size: smaller;
+    box-shadow: 5px 5px var(--color-accent-40p);
+    padding: 0.5rem;
+}

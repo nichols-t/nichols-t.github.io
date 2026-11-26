@@ -42,11 +42,164 @@ you're curious -->
     </nav>
 </header>
     <div id="#grid">
+        <!-- TODO: Article templating system -->
         <article>
-            <h2>Writings</h2>
-            <p>Coming soon. This page will hold interesting notes, explorations,
-                and perhaps written creative works.
+            <h2>iamnotafake Protector Cryptosystem "Analysis"</h2>
+            <aside>
+                Please note I am not a professional cryptographer, although I work with systems like this for a living.
+                This could all be based around a standard I just haven't needed to work with yet. I just saw this online
+                and was curious about it, and these are my notes on how I think this works.
+            </aside>
+            <h3>Summary</h3>
+            <p>The point of the iamnotafake device's cryptosystem is to allow verification that video
+                footage containing a displayed pattern was genuinely recorded at the time that the
+                video claims*.</p>
+            <aside>*See the Open Questions section below--I'd like to know if this is correct, or if the
+                verification is actually less specific than that. </aside>
+            <h3>Known Facts</h3>
+            <ul>
+                <li>Based on this
+                    <a target="_blank"
+                        href="https://www.reddit.com/r/diyelectronics/comments/1y4xfvh/i_built_a_wearable_pin_that_proves_youre_not_a/">
+                        Reddit post</a>,
+                    we know that the displayed light is a "pattern computed with HMAC-SHA256 from the current
+                    time and a key unique to each pin".
+                </li>
+                <li>
+                    The <a target="_blank" href="https://www.youtube.com/watch?v=UbEV-jBgPRQ">
+                        Youtube overview video
+                    </a> states that "each device has a unique private key". In my work, the "private key" wording
+                    would mean to me that it's an asymmetric keypair, so I'll proceed with that assumption.
+                </li>
+                <li>
+                    Verification is performed via the <a target="_blank" href="https://iamnotfake.com/verify">
+                        vendor website.
+                    </a> I have not found details on how the verification works.
+                </li>
+            </ul>
+            <p>So we have at least 2 keys in play:</p>
+            <ul>
+                <li>A device-unique symmetric key that performs an HMAC on the current time, and possibly on some other
+                    metadata. <ul>
+                        <li>
+                            I will call this the "Device-unique secret key" or <code>DUSK</code>.
+                        </li>
+                    </ul>
+                </li>
+                <li>A device-unique asymmetric keypair.<ul>
+                        <li> will call this the "Device-unique keypair" or <code>DUKP</code>.
+                            The public key will be called <code>DUKPUB</code> and the private key <code>DUKPRI</code>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Assumptions</h3>
+            <p>I will make the following assumptions:</p>
+            <ul>
+                <li>All statements about the cryptography involved are accurate, but not necessarily complete.</li>
+                <li>The system is designed such that the vendor does not need to store the <code>DUKPRI</code> or the
+                    <code>DUSK</code>.
+                    <ul>
+                        <li>It could be the case that the vendor <em>does</em> store the <code>DUSK</code> or <code>
+                            DUKPRI
+                        </code> for each
+                            pin, but
+                            that would be undesirable if it can be avoided.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>How I Think it Works</h3>
+            <p>In order for the statements "The pattern is an HMAC... from a device-unique key" and "The device has a
+                unique keypair" to both be true, <em>and</em> for the system to not require vendor-side storage of the
+                <code>DUKPRI</code>, we would need to infer that either:
             </p>
+            <ol>
+                <li>The <code>DUSK</code> is generated randomly or derived from the <code>DUKPRI</code>. </li>
+                <li>There are additional cryptographic elements involved.</li>
+            </ol>
+            <h4>If the <code>DUSK</code> is Generated/Derived With only the <code>DUKPRI</code></h3>
+                <p>The <code>DUSK</code> could be generated randomly. However, since the vendor needs to
+                    perform verification, it would need to either store or obtain the <code>DUSK</code> in some manner.
+                </p>
+                <p>The site's verification page seems to just take the pattern (an HMAC result), and presumably a date
+                    from
+                    the video metadata as parameters. So we can be fairly sure that the <code>DUSK</code> is not being
+                    exchanged here.
+                </p>
+                <p>If it is not being securely exchanged at verification time, then it would have to be stored by the
+                    vendor. However, the vendor would want to avoid needing to do this, so I think that the
+                    <code>DUSK</code> is *not* randomly generated.
+                </p>
+                <p>Likewise, if one were to simply derive the <code>DUSK</code> via some KDF using the
+                    <code>DUKPRI</code>,
+                    then the vendor would have the same problem as the randomly-generated case: they'd need to store the
+                    <code>DUKPRI</code> to then re-derive the <code>DUSK</code>. Therfore I think there is at least one
+                    additional key involved.
+                </p>
+                <h4>A New Key</h4>
+                <p>There is a way to create a shared secret without requiring one side (the device) to share the
+                    <code>DUKPRI</code> with another party: Diffie-Hellman (DH). DH allows the exchange of a shared
+                    secret between two keypairs, so I will invent a new keypair for this process.
+                </p>
+                <p>I will call this the Vendor Key Pair or <code>VKP</code>, and corresponding <code>VKPRI</code> and
+                    <code>VKPUB</code> for its private and public components. The <code>VKPRI</code> can be stored
+                    vendor-side.
+                </p>
+                <p>With the <code>VKP</code>, we can now derive <code>DUSK</code> as the shared secret* from a DH
+                    between the <code>VKP</code> and the <code>DUKP</code>. This would allow the <code>DUKPRI</code> to
+                    remain <em>only</em> on the device. At provisioning time, the <code>VKPUB</code> would be sent to
+                    each device, and the device would send its <code>DUKPUB</code> to the vendor. </p>
+                <p>Now, each side can derive the shared secret at any time, and the <code>DUKPRI</code> can remain
+                    solely on its own device without needing to be persistently stored by the vendor.</p>
+                <aside>
+                    *I believe it's recommended to not use the shared secret directly as the <code>DUSK</code> but to
+                    perform a KDF on the shared secret first to produce the <code>DUSK</code>. If I were less lazy I
+                    would
+                    find the NIST standard to this effect.
+                </aside>
+                <h3>Verification</h3>
+                <p>If the DH above is being done, the vendor can verify a code by:</p>
+                <ol>
+                    <li>Knowing which pin produced the HMAC pattern. <ul>
+                            <li>Preumably this metadata would be stored by the vendor, or is an undocumented part of the
+                                pattern</li>
+                            <li>Some comments say that the verify searches for <em>any</em> matching pin, which would
+                                make this requirement moot (but this feels like something that the vendor maybe ought
+                                not to be
+                                doing)</li>
+                        </ul>
+                    </li>
+                    <li>Performing a DH using the stored <code>DUKPUB</code> for that device and <code>VKPRI</code>.
+                    </li>
+                    <li>Performing the HMAC on the claimed timestamp and any other necessary metadata.</li>
+                    <li>Comparing the results to see if they match.</li>
+                </ol>
+                <h3>Open Questions</h3>
+                <h4>What is the actual cryptographic scope of the verification?</h4>
+                <ul>
+                    <li>Does it verify that <em>this</em> pin produced <em>this</em> pattern at <em>this</em> time?</li>
+                    <li>Does it verify that <em>this</em> pin produced <em>this</em> pattern at some point in the past?
+                    </li>
+                    <li>Does it verify that <em>any</em> pin produced <em>this</em> pattern at some point in the past?
+                    </li>
+                </ul>
+                <h4>Why is verification seemingly a vendor-controlled process, instead of being something that anyone
+                    can perform?</h4>
+                <h4>What device-unique information (whether keys or other metadata) does the vendor actually store?</h4>
+                <h4>Is there any mechanism to verify the authenticity of a device?</h4>
+                <p>I.e. is the device-unique keypair tied to a certificate? If so, what root signs this certificate and
+                    how is that root secured?</p>
+                <h3>Conclusion</h3>
+                <p> This is an interesting product idea; I am probably not going to buy it at that price, and certainly
+                    not without knowing how the cryptography works. I think the vendor ought to publish a page
+                    explaining the cryptosystem,as a secure cryptosystem is not weakened if its details are made public.
+                </p>
+                <p>
+                    There are other ways that the system could be circumvented; the reddit post above has a few mentions
+                    of these, which the vendor acknowledges. Nevertheless, I like the spirit of the product. Even if the
+                    defense that this product provides is imperfect, I am glad that some work is being done to defend
+                    against misinformation and altered content.
+                </p>
         </article>
     </div>
     <!-- Grows to fill empty space if body contents are not as tall as screen height -->
